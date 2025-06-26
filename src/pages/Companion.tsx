@@ -9,7 +9,7 @@ import {supabase} from "@/integrations/supabase/client";
 import {useNavigate} from "react-router-dom";
 import ComingSoon from "@/components/ComingSoon";
 import DemoAvatar from "@/pages/DemoAvatar.tsx";
-
+ 
 const CompanionContent = () => {
     const {user} = useAuth();
     const navigate = useNavigate();
