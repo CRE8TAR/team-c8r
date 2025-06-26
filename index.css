@@ -1,0 +1,102 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 262 76% 20%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 6% 90%;
+    --secondary-foreground: 240 6% 10%;
+
+    --muted: 240 6% 90%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 242 84% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 262 76% 20%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 10% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 262 76% 36%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 6% 65%;
+
+    --accent: 242 84% 70%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 262 76% 46%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-rohum-blue to-rohum-pink;
+  }
+  
+  .glass-card {
+    @apply bg-white/10 backdrop-filter backdrop-blur-lg border border-white/20 rounded-xl;
+  }
+  
+  .dark .glass-card {
+    @apply bg-black/20 border-white/10;
+  }
+
+  .glow-effect {
+    @apply relative;
+  }
+  
+  .glow-effect::before {
+    @apply content-[''] absolute -inset-1 bg-gradient-to-r from-rohum-blue to-rohum-pink rounded-xl blur-sm opacity-70;
+    z-index: -1;
+  }
+}
